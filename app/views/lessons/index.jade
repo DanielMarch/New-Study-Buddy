@@ -1,0 +1,14 @@
+extends ../shared/template
+
+block content
+  script(src='/js/vendor/jquery-2.1.1.js')
+  script
+    $(function(){$("#content").load("/materials/#{lesson._id}.html");});
+
+  h1= lesson.name
+  h4= lesson.description
+
+  #content
+
+  form(method='GET', action='/lessons/#{lesson._id}/test')
+    button(class='btn btn-primary') Take Test

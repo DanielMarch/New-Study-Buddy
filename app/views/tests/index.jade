@@ -1,0 +1,18 @@
+extends ../shared/template
+
+block content
+  h1 #{lesson.name} Test
+
+  .time-limit-container-test(data-timer=lesson.testTimer)
+
+  form#test(method='POST', action='/user/#{userId}/lessons/#{lesson._id}/test')
+    each question in questions
+      .test-question-container
+        h4(class='question')= question.question
+          each answer in question.answers
+            h5(class='answer', data-answer='#{answer.answer}')= answer.answer
+            input(type='radio' name='#{question._id}' value='#{answer.answer}')
+    button.submit-test(type='submit', class='btn btn-success') Submit Test
+
+block scripts
+  script(src='/js/es6/compiled/take-test.js')

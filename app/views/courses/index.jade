@@ -1,0 +1,17 @@
+extends ../shared/template
+
+block content
+  h1 Available Courses
+
+  table.table
+    thead
+      tr
+        th Course Name
+        th Course Subject
+        th Course Description
+    tbody
+      each course in courses
+        tr
+          td: a(href='/courses/#{course._id}')= course.name
+          td: a(href='/courses/filter/#{course.subject}')= course.subject
+          td= course.description

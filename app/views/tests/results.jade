@@ -1,0 +1,7 @@
+extends ../shared/template
+
+block content
+  h2 Your Score is
+  h3= score
+  - var pass = (didPass ? 'You Passed' : 'You Did not Pass' )
+  h4= pass

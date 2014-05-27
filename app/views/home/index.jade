@@ -1,0 +1,20 @@
+extends ../shared/template
+
+block content
+
+  .home-container
+    h1 Open Course
+
+    .home-banner-container
+      .home-banner-image-learn
+        h3
+          a(href='/courses') Take
+          span.home
+          | the world's best courses, online, for free.
+      .home-banner-image-teach
+        h3 And
+          span.home
+          - var route = (userId !== undefined || null ? '/user/courses/new' : '/portal' )
+          a(href='#{route}') teach
+          span.home
+          | them too...

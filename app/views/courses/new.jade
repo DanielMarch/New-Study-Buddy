@@ -1,0 +1,49 @@
+extends ../shared/template
+
+block content
+  h1 Create a Course
+  form(method='POST', action='/user/courses')
+    .form-group
+      .course-name
+        label Course Name
+        input.form-control(type='text', name='name', placeholder='Enter Course Name')
+    .form-group
+      .course-des
+        label Course Description
+        textarea.form-control(type='text',name='description', placeholder='Enter Course Description')
+    .form-group
+      .course-sub
+        label Course Subject
+        select.form-control(type='text', name='subject')
+          option Select Course Subject
+          option Agriculture
+          option Culinary
+          option Computer Science
+          option History
+          option Math
+          option Languages
+          option Science
+    button.course-create-btn(type='submit', class='btn btn-success') Create
+
+  //- .editor
+  //-   <!-- Create the toolbar container -->
+  //-   <div id="toolbar">
+  //-   <button class="sc-bold">Bold</button>
+  //-   <button class="sc-italic">Italic</button>
+  //-   </div>
+  //-
+  //-   <!-- Create the editor container -->
+  //-   <div id="editor">
+  //-   <p>Hello World!</p>
+  //-   <p>Some initial <b>bold</b> text</p>
+  //-   <p><br></p>
+  //-   </div>
+  //-
+  //-   <!-- Include the Quill library -->
+  //-   <script src="http://quilljs.com/js/quill.js"></script>
+  //-
+  //-   <!-- Initialize Quill editor -->
+  //-   <script>
+  //-   var editor = new Quill('#editor');
+  //-   editor.addModule('toolbar', { container: '#toolbar' });
+  //-   </script>

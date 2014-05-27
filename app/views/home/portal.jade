@@ -1,0 +1,27 @@
+extends ../shared/template
+
+block content
+  form.form-horizontal(action='/signup', method='post')
+    fieldset
+        legend Create User
+        .form-group
+          label.col-md-4.control-label(for='textinput')
+          .col-md-4
+            input#textinput.form-control.input-md(type='email', name='email', autofocus=true, placeholder='Email')
+            input#textinput.form-control.input-md(type='password', name='password', placeholder='Password')
+        .form-group
+          label.col-md-4.control-label(for='singlebutton')
+          .col-md-4
+            button#singlebutton.btn.btn-primary(name='singlebutton') Create
+  form.form-horizontal(action='/login', method='get')
+    fieldset
+        legend Login
+        .form-group
+          label.col-md-4.control-label(for='textinput')
+          .col-md-4
+            input#textinput.form-control.input-md(type='email', name='email', autofocus=true, placeholder='Email')
+            input#textinput.form-control.input-md(type='password', name='password', placeholder='Password')
+        .form-group
+          label.col-md-4.control-label(for='singlebutton')
+          .col-md-4
+            button#singlebutton.btn.btn-primary(name='singlebutton') Login
